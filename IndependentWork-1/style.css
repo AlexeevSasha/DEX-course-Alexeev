@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: 'Nunito', serif;
+   font-size: 16px;
+   line-height: 1.5;
+   background: rgb(222,242,239);
+   background: linear-gradient(90deg, rgba(222,242,239,1) 0%, rgba(206,224,244,1) 100%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.container {
+    width: 1400px;
+    padding: 10px;
+}
+
+.header {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.header__title {
+    font-weight: normal;
+}
+
+.wrapper {
+    background-color: #66AFDA;
+    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.15);
+    width: 900px;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.wrapper__title {
+ padding-top: 20px;
+ font-size: 25px;
+ text-align: center;
+ color: #275068;
+}
+
+.wrapper__text {
+    padding-top: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: #2a5b79;
+    font-weight: 500;
+}
+
+.container__calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    display: inline-block;
+    max-width: 150px;
+    height: 150px;
+    margin: 40px 30px 0;
+    text-align: center;
+    font-size: 50px;
+    background: #DAEFFC;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* убирает стрелки */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+input:hover {
+    background: #f4fbff;
+}
+
+.button__random {
+    width: 150px;
+    font-size: 11px;
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+    background: #94C9E8;
+    border: 1px solid #5E9FC5;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.button__random:hover {
+    background: #add4eb;
+    border: 1px solid #add4eb;
+
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.button__calculate, .button__reset {
+    margin: 30px;
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.button__calculate {
+    background: #40cc0d;
+}
+
+.button__calculate:hover {
+    background: #37b30a;
+}
+
+.button__reset {
+    display: block;
+    background: #EE2C2C;
+
+}
+
+
+.button__reset:hover {
+    background: #cc2222;
+}
+
+.active {
+    display: none;
+}
+
+.error {
+    display: none;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.error__title {
+    padding: 15px;
+    color: white;
+    background: rgba(206, 6, 6, 0.5);
+}
+
+
+
+.result {
+    display: none;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+
+
+
+@media (max-width: 950px) {
+.wrapper {
+    width: 700px;
+}
+
+.wrapper__title {
+    font-size: 20px;
+}
+
+.wrapper__text {
+       font-size: 16px;
+}
+}
+
+@media (max-width: 725px) {
+    .wrapper {
+        width: 500px
+    }
+
+    input {
+        max-width: 120px;
+        height: 120px;
+        margin: 40px 10px 0;
+        font-size: 35px;
+        }
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        width: 350px
+    }
+
+    input {
+    max-width: 70px;
+    height: 70px;
+    margin: 40px 10px 0;
+    font-size: 25px;
+    }
+
+    .button__random {
+        width: 70px;
+        height: 40px;
+        font-size: 8px;
+        margin: 20px 10px;
+        padding: 10px;
+    }
+    .button__calculate, .button__reset {
+        font-size: 15px;
+        margin: 30px 15px;
+
+    }
+}
+
+
+@media (max-width: 320px) {
+
+    .wrapper {
+        width: 300px
+    }
+
+}
+
+
+
+
+

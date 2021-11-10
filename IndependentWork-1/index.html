@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>IndependentWork 1</h1>
+            <h2 class="header__title">Calculator</h2>
+        </header>
+     <div class="wrapper">
+        <h3 class="wrapper__title">Введите два значения и оператор</h3>
+        <p class="wrapper__text">Вы можете использовать 6 стандартных операторов JavaScript или воспользуйтесь <em>рандомными значениями</em></p>
+        <div class="container__calc">
+            <input id="opX" placeholder="X" type="number">
+            <input id="op" placeholder="+" type="text">
+            <input id="opY" type="number" placeholder="Y">
+        </div>
+
+        <div class="container__calc">
+             <button class="button__random" btnX="x">Рандомное число для X</button>
+             <button class="button__random" btnOp="op">Рандомный оператор</button>
+             <button class="button__random" btnY="y">Рандомное число для Y</button>
+        </div>
+
+        <div class="container__calc">
+        <button class="button__calculate">Рассчитать</button>
+        <button class="button__reset active">Очистить</button>
+        </div>
+
+
+         <h2 class="result"></h2>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
