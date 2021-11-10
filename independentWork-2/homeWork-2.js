@@ -2,12 +2,23 @@ export const sum = (firstValue, secondValue) => {
     //TODO: Должны складываться только строки и числа
     // Постарайтесь сложить как можно больше пар и обойти NaN случаи
 
-    const valid = (typeof firstValue == 'number' || typeof firstValue == 'string') && (typeof secondValue == 'number' || typeof secondValue == 'string')
-    // проверяем, чтобы аргументы были только number или string
-    if (!valid) return;
+    // получаем переменные строки или числа
+    const validFirstValue = typeof firstValue == 'number' || typeof firstValue == 'string';
+    const validSecondValue = typeof secondValue == 'number' || typeof secondValue == 'string';
+    // получием в переменные результат Number.isNaN
+    const isNaNFirstValue = Number.isNaN(parseInt(firstValue));
+    const isNaNSecondValue = Number.isNaN(parseInt(secondValue));
 
-    // проверка на isNaN, но сначала делаем число из аргументов
-    if (!isNaN(parseInt(firstValue)) && !isNaN(parseInt(secondValue))) {
+    // если оба аргумента не являются числом или строкой
+    if (!validFirstValue && !validSecondValue) return 0;
+
+    // Если один из аргументов не является строкой или числом, то мы проверяем другой аргумент является ли он isNaN и если нет, то выводим его, иначе 0
+    if (!validFirstValue) return !isNaNSecondValue ? parseInt(secondValue) : 0
+    if (!validSecondValue) return !isNaNFirstValue ? parseInt(firstValue) : 0
+
+
+    // если аргументы являются числами или стркоми, то выводим результат. Так же если нам придёт строка "21,2" то меняем запятую на точку
+    if (!isNaNFirstValue && !isNaNSecondValue) {
 
         if (typeof firstValue == 'string') {
             // если к нам придёт строка типа "21,3" , меняем запятую на точку
@@ -20,6 +31,13 @@ export const sum = (firstValue, secondValue) => {
 
         return parseInt(firstValue) + parseInt(secondValue)
     }
+
+    // если оба аргумента являются NaN
+    if (isNaNFirstValue && isNaNSecondValue) return 0
+
+    // если один из аргументов будет NaN, то выводим другой
+    if (isNaNFirstValue) return parseInt(secondValue)
+    if (isNaNSecondValue) return parseInt(firstValue)
 };
 
 export const showPrice = (price, discount) => {
