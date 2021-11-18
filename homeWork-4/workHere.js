@@ -23,9 +23,8 @@ export const logger = (name, func) => {
 
 export const curry = (func) => {
     return function funCurr(...arg) {
-        const curridFunc = func.bind(this);
         if (func.length === arg.length) {
-            return curridFunc(...arg);
+            return func.bind(this)(...arg);
         } else {
             return (...arg2) => funCurr.call(this, ...arg, ...arg2);
         }
