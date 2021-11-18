@@ -7,7 +7,7 @@
 function funcСurryingCount(num) {
   return function funcСurryingArgs(...args) {
     if (args.length >= num) {
-      return args.slice(0, 3).reduce((acc, item) => acc + item, 0);
+      return args.slice(0, num).reduce((acc, item) => acc + item, 0);
     } else {
       return (...args2) => funcСurryingArgs(...args, ...args2);
     }
