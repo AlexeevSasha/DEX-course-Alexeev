@@ -43,10 +43,8 @@ const getResponse = async (str) => {
   return compareText(str)
     .then((res) => `${res} :)`)
     .then((response) => {
-      const newRes =
-        response.length < 20 ? addStrBrackets(response, ")") : response;
+      const newRes = response.length < 20 ? addStrBrackets(response, ")") : response;
       console.log(newRes);
-      return newRes;
     })
     .catch((err) => {
       const error = `${err.message} :(`;
@@ -55,7 +53,6 @@ const getResponse = async (str) => {
     .catch((error) => {
       const newErr = error.length < 20 ? addStrBrackets(error, "(") : error;
       console.log(newErr);
-      return newErr;
     });
 };
 
@@ -72,9 +69,8 @@ const getDataFromAPI = async (url) => {
       throw new Error(`status is ${response.status}`);
     }
     console.log(response);
-    return response;
   } catch (error) {
-    console.log("Ошибка", error.message);
+    console.log("Ошибка:", error.message);
   }
 };
 getDataFromAPI("https://randomuser.me/api");
