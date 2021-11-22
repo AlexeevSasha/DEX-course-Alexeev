@@ -1,5 +1,4 @@
 import { compareText } from "./data";
-
 // Написать 2 функции,
 // первая обработает ответ от compareText (положительный и отрицательный)
 // TODO: первая функция использует then и catch
@@ -17,9 +16,9 @@ const getData = (str) => {
 const processingData = async (str) => {
   try {
     const response = await getData(str);
-    console.log("Success:", response);
+    console.log(`Success: ${response}`);
   } catch (error) {
-    console.log("Error:", error.message);
+    console.log(`Error: ${error.message}`);
   }
 };
 processingData("короткий текст");
@@ -32,6 +31,7 @@ processingData("длинный тексттттттттттт");
 // скобочки нужно добавлять пока длинна не станет равна 20
 // TODO: на каждое действи должна быть отдельная конструкция then или catch
 // Например первый then для добавления " :)", второй для подсчёта количества символов и добавления недостающих
+
 function addStrBrackets(str, brackets) {
   // return str.padEnd(20, brackets)
   for (let i = str.length; i < 20; i++) {
@@ -70,7 +70,7 @@ const getDataFromAPI = async (url) => {
     }
     console.log(response);
   } catch (error) {
-    console.log("Ошибка:", error.message);
+    console.log(`Ошибка: ${error.message}`);
   }
 };
 getDataFromAPI("https://randomuser.me/api");
