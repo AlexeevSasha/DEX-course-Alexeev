@@ -52,6 +52,16 @@ class ExtendedClock extends Clock {
     this.timer = setInterval(() => this.render(), this.precision);
   }
 };
-let newClock = new ExtendedClock({template: 'h:m:s'}, 10000);
+let newClock = new ExtendedClock({ template: 'h:m:s' }, 10000);
 newClock.start();
+
+
+function printNumbers(from, to) {
+  let timer = setInterval(() => {
+    console.log(from);
+    if (from == to) clearInterval(timer);
+    from++
+  }, 1000);
+}
+printNumbers(0, 10)
 
