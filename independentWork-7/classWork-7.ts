@@ -134,18 +134,18 @@ interface IImplement2 {
 }
 
 class Implementator implements IImplement1<string>, IImplement2 {
-  public name: string;
-  public randomProp: string;
-  constructor() {
-    this.name = 'name';
-    this.randomProp = 'randomProp'
+  name: string;
+  randomProp: string;
+  constructor(name: string, randomProp: string) {
+    this.name = name;
+    this.randomProp = randomProp
   }
   handler(param1: string, param2: string): string {
     return param1 + param2
   }
 
   handler2(param: string, param2: number) {
-    return () => true
+    return () => Boolean(param);
   }
 
   handler3<T>(param: T): T[] {
