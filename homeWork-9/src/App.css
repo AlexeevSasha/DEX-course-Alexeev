@@ -1,0 +1,88 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+}
+.header {
+  grid-area: header;
+  background: crimson;
+}
+.main {
+  grid-area: main;
+  background: grey;
+}
+.aside {
+  grid-area: aside;
+  background: #fff;
+}
+.footer {
+  grid-area: footer;
+  background: darkcyan;
+}
+
+.project__title {
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
+.todoList__title {
+  margin: 20px 0 0 40px;
+}
+
+.todoCard {
+  background: #fff;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.todoCard:hover {
+  box-shadow: 0 0 2px yellow inset;
+  background: #f2aeba;
+}
+.delete_todo {
+  background: transparent;
+  border: 1px solid crimson;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.delete_todo:hover {
+  background: crimson;
+  color: #fff;
+}
+
+.status-project {
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.1s linear;
+}
+.status-project:active {
+  transform: translateY(5px);
+}
+
+.noImportant {
+  background: rgb(17, 182, 17);
+}
+.noImportant:hover {
+  background: rgb(7, 134, 7);
+  color: white;
+}
+
+.important {
+  background: rgb(255, 0, 0);
+}
+.important:hover {
+  background: rgb(197, 3, 3);
+  color: white;
+}
