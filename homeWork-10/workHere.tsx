@@ -52,13 +52,14 @@ const useTodos = (projectId: number): deletableLoadedTata<ITodo[]> => {
 
   React.useEffect(() => {
     if (projectId !== null && todos[projectId] === undefined) {
+      setLoading(true);
       async function getProject() {
         const respons = await fetchTotos(projectId);
         setTodos({ ...todos, [projectId]: respons });
+        setLoading(false);
       }
       getProject();
     }
-    setLoading(todos[projectId] !== undefined ? false : true);
   });
 
   return {
