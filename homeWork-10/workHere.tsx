@@ -60,7 +60,7 @@ const useTodos = (projectId: number): deletableLoadedTata<ITodo[]> => {
       }
       getProject();
     }
-  });
+  }, [projectId]);
 
   return {
     isLoading: loading,
