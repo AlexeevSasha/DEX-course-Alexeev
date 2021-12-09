@@ -43,7 +43,7 @@ type deletableLoadedTata<T> = loadedData<T> & {
   remove: (todoId: number) => void;
 };
 type ProjectsTodos = {
-  [key: number]: Array<ITodo>;
+  [key: string]: Array<ITodo>;
 };
 
 const useTodos = (projectId: number): deletableLoadedTata<ITodo[]> => {
