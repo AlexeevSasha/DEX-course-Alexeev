@@ -42,9 +42,12 @@ const useProjects = (): loadedData<IProject[]> => {
 type deletableLoadedTata<T> = loadedData<T> & {
   remove: (todoId: number) => void;
 };
+type ProjectsTodos = {
+  [key: number]: Array<ITodo>;
+};
 
-const useTodos = (projectId: number | null): deletableLoadedTata<ITodo[]> => {
-  const [todos, setTodos] = React.useState({});
+const useTodos = (projectId: number): deletableLoadedTata<ITodo[]> => {
+  const [todos, setTodos] = React.useState<ProjectsTodos>({});
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -55,11 +58,8 @@ const useTodos = (projectId: number | null): deletableLoadedTata<ITodo[]> => {
       }
       getProject();
     }
-  }, [projectId]);
-
-  React.useEffect(() => {
     setLoading(todos[projectId] !== undefined ? false : true);
-  }, [todos[projectId]]);
+  });
 
   return {
     isLoading: loading,
@@ -82,7 +82,7 @@ type FilterProps = {
 };
 
 const FilterComponent: FC<FilterProps> = ({ onFilter }) => {
-  React.useMemo(() => console.log("FilterComponent render"), [onFilter]);
+  React.useMemo(() => console.log("FilterComponent render"), []);
   const input = React.useRef(null);
   return (
     <div>
