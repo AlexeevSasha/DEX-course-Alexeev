@@ -1,0 +1,15 @@
+.timer {
+    max-width: 250px;
+    width: 100%;
+    font-size: 2vw;
+    &__clock {
+        background-color: rgba(204, 18, 45, 0.3);
+        padding: 8px 5px;
+        font-family: 'Jost';
+        color: var(--white);
+        font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+    }
+
+}

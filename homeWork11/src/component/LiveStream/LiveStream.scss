@@ -1,0 +1,47 @@
+.live-stream {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(0deg, #9D9E9F -5%, #C4C7C9 71.21%, #A0A2A4 108.08%);
+
+    &__title {
+        color: #2C2C2C;
+        font-family: 'Jost';
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: uppercase;
+        padding: 10px 0;
+        margin-right: 16px;
+    }
+
+    &__btn {
+       position: relative;
+       display: block;
+       background: var(--green);
+       width: 36px;
+       height: 36px;
+       border: none;
+       border-radius: 50%;
+       cursor: pointer;
+
+       &::after {
+        display: block;
+        content: "";
+        background: url('../../images/array.svg') no-repeat center center;
+        position: absolute;
+        top: 45%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 11px;
+        height: 11px;
+        z-index: 99;
+       }
+
+       &:hover {
+        background: #1C8C0A;
+       }
+    }
+}
