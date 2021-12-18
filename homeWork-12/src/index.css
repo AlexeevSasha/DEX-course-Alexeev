@@ -76,6 +76,7 @@ body ::after {
 
 .console__items {
   color: #6FE737;
+  word-wrap: break-word;
 }
 .console__items--title, .console__items--nohistory {
    font-size: 25px;
@@ -89,10 +90,13 @@ body ::after {
 
 
 .console__item {
+  padding-bottom: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid rgba(111, 231, 55, 0.1);;
   color: rgba(111, 231, 55, 0.7);
   font-size: 16px;
 }
+
 
 
 
@@ -138,6 +142,9 @@ body ::after {
   color: rgba(214, 47, 47, 1);
 }
 
+.catalog {
+  color: #C7FFAD;
+}
 
 
 

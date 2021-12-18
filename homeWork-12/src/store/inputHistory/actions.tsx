@@ -1,15 +1,20 @@
 interface ICommandBufferType {
+    addComnandCd: 'add comand cd',
+    setMessagePrint: 'add message',
     addHistory: 'add history',
-    setMessagePrint: 'add message'
+
+
 }
 
 
 export const addHistoryType: ICommandBufferType = {
+    addComnandCd: 'add comand cd',
+    setMessagePrint: 'add message',
     addHistory: "add history",
-    setMessagePrint: 'add message'
 };
 
 export const historyActions = {
-    setHistory: (payload: string) => ({ type: addHistoryType.addHistory, payload }),
+    setComandCd: (payload: string) => ({ type: addHistoryType.addComnandCd, payload }),
     setMessagePrint: (payload: string) => ({ type: addHistoryType.setMessagePrint, payload }),
+    setHistory: (payload: string) => ({ type: addHistoryType.addHistory, payload }),
 }
